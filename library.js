@@ -16,15 +16,25 @@ const library = [
   },
 ];
 
-let newBook = {
+let newBook1 = {
   title: "Melania",
   author: "Melania Trump",
   isAvailable: true,
 };
 
-const addNewBook = library.push(newBook);
+let newBook2 = {
+    title: "Save America",
+    author: "Donald Trump",
+    isAvailable: true,
+  };
 
-console.log(library);
+const addNewBooks =(...newBooks)=>{
+    library.push(...newBooks);
+} 
+
+addNewBooks(newBook1, newBook2)
+
+console.log("The Library with New Books: ", library);
 
 const displayAvailableBooks = () => {
   let availableBooks = library.filter((book) => book.isAvailable == true);
@@ -46,7 +56,7 @@ const borrowBook = (bookTitle) => {
  const proceedToBorrow =()=>{
     if (bookToBorrow.isAvailable === true) {
         bookToBorrow.isAvailable = false;
-        console.log(`You borrowed ${bookTitle}`);
+        console.log(`You borrowed the book: ${bookTitle}`);
       } else {
         console.log(`${bookTitle} is not available right now`);
       }
@@ -62,5 +72,6 @@ borrowBook("Melania");
 console.log(availableBooks);
 
 borrowBook("Melania");
-borrowBook("")
+borrowBook("Tne")
 borrowBook("The Purpose Driven Life")
+
