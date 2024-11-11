@@ -68,10 +68,12 @@ const borrowBook = (bookTitle) => {
   }
 };
 
-borrowBook("Melania");
-console.log(availableBooks);
+displayAvailableBooks();
 
 borrowBook("Melania");
-borrowBook("Tne")
+borrowBook("Melania");
+borrowBook("The Draw")
 borrowBook("The Purpose Driven Life")
+
+displayAvailableBooks();
 
